@@ -1,13 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"os"
+	"fmt"
 	"bufio"
 	"strings"
+
+	"github.com/e-mar404/pokedex/commands"
 )
 
 func startRepl() {
+	config := &commands.Config{}
 	scanner := bufio.NewScanner(os.Stdin)
 	prompt()
 
@@ -16,15 +19,15 @@ func startRepl() {
 		clean := cleanInput(raw)
 		inputCommand := clean[0]
 
-		command, ok := commands()[inputCommand]
+		command, ok := commands.List()[inputCommand]
 		if !ok {
 			fmt.Printf("Unkown command\n")
 			break
 		}
 
-		err := command.callback()
+		err := command.Callback(config)
 		if err != nil {
-			fmt.Println(err)
+			fmt.Printf("command error: %v\n", err)
 		}
 
 		prompt()
