@@ -1,16 +1,5 @@
 package pokeapi
 
-type ResourceList struct {
-	Count    int           `json:"count"`
-	Next     string        `json:"next"`
-	Previous string        `json:"previous"`
-	Results  []APIResource `json:"results"`
-}
-
-type APIResource struct {
-	Name string `json:"name"`
-	Url  string `json:"url"`
-}
 
 type LocationArea struct {
 	Id                   int                   `json:"id"`
@@ -57,22 +46,19 @@ type Encounter struct {
 }
 
 type EncounterConditionValue struct {
-	Id        int                `json:"id"`
-	Name      string             `json:"name"`
+	APIResource
 	Condition EncounterCondition `json:"condition"`
 	Names     []Name             `json:"names"`
 }
 
 type EncounterCondition struct {
-	Id     int                       `json:"id"`
-	Name   string                    `json:"name"`
+	APIResource
 	Names  []Name                    `json:"names"`
 	Values []EncounterConditionValue `json:"values"`
 }
 
 type EncounterMethod struct {
-	Id    int    `json:"id"`
-	Name  string `json:"name"`
+	APIResource
 	Order int    `json:"order"`
 	Names []Name `json:"names"`
 }
