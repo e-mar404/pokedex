@@ -4,7 +4,7 @@ import "github.com/e-mar404/pokedex/internal/pokeapi"
 
 type Config struct {
 	PokeClient pokeapi.Client
-	Pokedex    pokeapi.Pokedex
+	Pokedex    *pokeapi.Pokedex
 	prevURL    string
 	nextURL    string
 }
@@ -46,6 +46,11 @@ func List() map[string]cliCommand {
 			name:        "catch",
 			description: "Throw a pokeball at a pokemon to simulate a catch try",
 			Callback:    catch,
+		},
+		"inspect": {
+			name:        "inspect",
+			description: "Inspect previously caught pokemon",
+			Callback:    inspect,
 		},
 	}
 }

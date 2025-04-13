@@ -17,7 +17,7 @@ func catch(config *Config, params []string) error {
 	var message string
 	if caught {
 		message = fmt.Sprintf("%s was caught!", params[0])
-		config.Pokedex[params[0]] = pokemon
+		config.Pokedex.Add(params[0], pokemon)
 	} else {
 		message = fmt.Sprintf("%s escaped", params[0])
 	}
