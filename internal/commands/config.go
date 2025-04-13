@@ -42,5 +42,10 @@ func List() map[string]cliCommand {
 			description: "List all of the Pokemon in an area",
 			Callback: explore,
 		},
+		"catch": {
+			name: "catch",
+			description: "Throw a pokeball at a pokemon to simulate a catch try",
+			Callback: catch,
+		},
 	}
 }

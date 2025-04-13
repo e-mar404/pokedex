@@ -4,10 +4,15 @@ type ResourceList struct {
 	Count    int           `json:"count"`
 	Next     string        `json:"next"`
 	Previous string        `json:"previous"`
-	Results  []APIResource `json:"results"`
+	Results  []NamedAPIResource `json:"results"`
 }
 
-type APIResource struct {
+type NamedAPIResource struct {
 	Name string `json:"name"`
 	Url  string `json:"url"`
+}
+
+type Name struct {
+	Name     string      `json:"name"`
+	Language NamedAPIResource `json:"language"`
 }

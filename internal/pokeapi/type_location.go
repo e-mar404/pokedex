@@ -1,38 +1,32 @@
 package pokeapi
 
-
 type LocationArea struct {
 	Id                   int                   `json:"id"`
 	Name                 string                `json:"string"`
 	GameIndex            int                   `json:"game_index"`
 	EncourterMethodRates []EncounterMethodRate `json:"encounter_method_rates"`
-	Location             APIResource           `json:"location"`
+	Location             NamedAPIResource           `json:"location"`
 	Names                []Name                `json:"names"`
 	PokemonEncounters    []PokemonEncounter    `json:"pokemon_encounters"`
 }
 
 type EncounterMethodRate struct {
-	EncounterMethod APIResource               `json:"encounter_method"`
+	EncounterMethod NamedAPIResource               `json:"encounter_method"`
 	VersionDetails  []EncounterVersionDetails `json:"version_details"`
 }
 
 type EncounterVersionDetails struct {
 	Rate    int         `json:"rate"`
-	Version APIResource `json:"version"`
-}
-
-type Name struct {
-	Name     string      `json:"name"`
-	Language APIResource `json:"language"`
+	Version NamedAPIResource `json:"version"`
 }
 
 type PokemonEncounter struct {
-	Pokemon        APIResource              `json:"pokemon"`
+	Pokemon        NamedAPIResource              `json:"pokemon"`
 	VersionDetails []VersionEncounterDetail `json:"version_details"`
 }
 
 type VersionEncounterDetail struct {
-	Version          APIResource `json:"version"`
+	Version          NamedAPIResource `json:"version"`
 	MaxChance        int         `json:"max_chance"`
 	EncounterDetails []Encounter `json:"encounter_details"`
 }
@@ -46,19 +40,19 @@ type Encounter struct {
 }
 
 type EncounterConditionValue struct {
-	APIResource
+	NamedAPIResource
 	Condition EncounterCondition `json:"condition"`
 	Names     []Name             `json:"names"`
 }
 
 type EncounterCondition struct {
-	APIResource
+	NamedAPIResource
 	Names  []Name                    `json:"names"`
 	Values []EncounterConditionValue `json:"values"`
 }
 
 type EncounterMethod struct {
-	APIResource
+	NamedAPIResource
 	Order int    `json:"order"`
 	Names []Name `json:"names"`
 }
