@@ -2,9 +2,9 @@ package commands
 
 import "github.com/e-mar404/pokedex/internal/pokeapi"
 
-
 type Config struct {
 	PokeClient pokeapi.Client
+	Pokedex    pokeapi.Pokedex
 	prevURL    string
 	nextURL    string
 }
@@ -38,14 +38,14 @@ func List() map[string]cliCommand {
 			Callback:    mapb,
 		},
 		"explore": {
-			name: "explore",
+			name:        "explore",
 			description: "List all of the Pokemon in an area",
-			Callback: explore,
+			Callback:    explore,
 		},
 		"catch": {
-			name: "catch",
+			name:        "catch",
 			description: "Throw a pokeball at a pokemon to simulate a catch try",
-			Callback: catch,
+			Callback:    catch,
 		},
 	}
 }

@@ -1,4 +1,4 @@
-package main 
+package main
 
 import (
 	"testing"
@@ -10,31 +10,31 @@ func TestCleanInput(t *testing.T) {
 		expected []string
 	}{
 		{
-			input: "  ",
+			input:    "  ",
 			expected: []string{},
 		},
 		{
-			input: "hello world",
+			input:    "hello world",
 			expected: []string{"hello", "world"},
 		},
 		{
-			input: "   pokemon    pika",
+			input:    "   pokemon    pika",
 			expected: []string{"pokemon", "pika"},
 		},
 		{
-			input: "Charmander Bulbasaur PIKACHU",
+			input:    "Charmander Bulbasaur PIKACHU",
 			expected: []string{"charmander", "bulbasaur", "pikachu"},
 		},
 	}
 
-	for _, c := range(cases) {
+	for _, c := range cases {
 		actual := cleanInput(c.input)
 
 		if len(actual) != len(c.expected) {
 			t.Errorf("lengths dont match: len(actual): %v, len(expected): %v", actual, c.expected)
 		}
-		
-		for i := range(c.expected) {
+
+		for i := range c.expected {
 			word := actual[i]
 			expectedWord := c.expected[i]
 

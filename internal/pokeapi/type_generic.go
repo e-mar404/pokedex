@@ -1,9 +1,9 @@
 package pokeapi
 
 type ResourceList struct {
-	Count    int           `json:"count"`
-	Next     string        `json:"next"`
-	Previous string        `json:"previous"`
+	Count    int                `json:"count"`
+	Next     string             `json:"next"`
+	Previous string             `json:"previous"`
 	Results  []NamedAPIResource `json:"results"`
 }
 
@@ -13,6 +13,6 @@ type NamedAPIResource struct {
 }
 
 type Name struct {
-	Name     string      `json:"name"`
+	Name     string           `json:"name"`
 	Language NamedAPIResource `json:"language"`
 }

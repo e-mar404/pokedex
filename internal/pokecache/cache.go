@@ -22,16 +22,16 @@ func NewCache(interval time.Duration) *Cache {
 	}
 
 	ticker := time.NewTicker(interval)
- 	go func(){
+	go func() {
 		for {
 			select {
-				case <-ticker.C:
-					cache.reapLoop(interval)
+			case <-ticker.C:
+				cache.reapLoop(interval)
 			}
 		}
 	}()
 
-	return cache 
+	return cache
 }
 
 func (c *Cache) Add(key string, val []byte) {
@@ -40,7 +40,7 @@ func (c *Cache) Add(key string, val []byte) {
 
 	c.cache[key] = cacheEntry{
 		createdAt: time.Now(),
-		val: val,
+		val:       val,
 	}
 }
 

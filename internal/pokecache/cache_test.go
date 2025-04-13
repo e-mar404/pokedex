@@ -31,7 +31,7 @@ func TestGetAdd(t *testing.T) {
 		}
 		if string(val) != string(c.val) {
 			t.Errorf("expected val to be %s", c.val)
-			return 
+			return
 		}
 	}
 }
@@ -53,4 +53,3 @@ func TestReapLoop(t *testing.T) {
 		return
 	}
 }
-

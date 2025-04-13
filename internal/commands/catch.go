@@ -9,14 +9,15 @@ func catch(config *Config, params []string) error {
 
 	fmt.Printf("Throwing a Pokeball at %s...\n", params[0])
 
-	caught, err := config.PokeClient.CatchPokemon(params[0])
+	pokemon, caught, err := config.PokeClient.CatchPokemon(params[0])
 	if err != nil {
 		return err
 	}
 
 	var message string
-	if caught { 
+	if caught {
 		message = fmt.Sprintf("%s was caught!", params[0])
+		config.Pokedex[params[0]] = pokemon
 	} else {
 		message = fmt.Sprintf("%s escaped", params[0])
 	}

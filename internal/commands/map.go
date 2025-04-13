@@ -12,8 +12,8 @@ func mapf(c *Config, _ []string) error {
 		fmt.Println(area.Name)
 	}
 
-	c.prevURL = locationList.Previous 
-	c.nextURL = locationList.Next 
+	c.prevURL = locationList.Previous
+	c.nextURL = locationList.Next
 
 	return nil
 }
@@ -28,8 +28,8 @@ func mapb(c *Config, _ []string) error {
 		fmt.Println(area.Name)
 	}
 
-	c.prevURL = locationList.Previous 
-	c.nextURL = locationList.Next 
+	c.prevURL = locationList.Previous
+	c.nextURL = locationList.Next
 
 	return nil
 }

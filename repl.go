@@ -9,7 +9,6 @@ import (
 	"github.com/e-mar404/pokedex/internal/commands"
 )
 
-
 func startRepl(config *commands.Config) {
 	scanner := bufio.NewScanner(os.Stdin)
 	prompt()
@@ -20,7 +19,7 @@ func startRepl(config *commands.Config) {
 		if len(clean) < 1 {
 			fmt.Printf("\n")
 			prompt()
-			continue	
+			continue
 		}
 
 		inputCommand := clean[0]
@@ -29,7 +28,7 @@ func startRepl(config *commands.Config) {
 		if !ok {
 			fmt.Printf("Unkown command\n")
 			prompt()
-			continue	
+			continue
 		}
 
 		err := command.Callback(config, clean[1:])
@@ -50,5 +49,3 @@ func cleanInput(text string) []string {
 func prompt() {
 	fmt.Print("Pokedex > ")
 }
-
-
