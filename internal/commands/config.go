@@ -2,10 +2,11 @@ package commands
 
 import "github.com/e-mar404/pokedex/internal/pokeapi"
 
+
 type Config struct {
 	PokeClient pokeapi.Client
-	prevURL string
-	nextURL string
+	prevURL    string
+	nextURL    string
 }
 
 type cliCommand struct {
@@ -32,9 +33,9 @@ func List() map[string]cliCommand {
 			Callback:    mapf,
 		},
 		"mapb": {
-			name: "mapb",
+			name:        "mapb",
 			description: "Displays the names of the prev 20 location areas in Pokemon",
-			Callback: mapb,
+			Callback:    mapb,
 		},
 	}
 }
