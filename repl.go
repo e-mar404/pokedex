@@ -32,9 +32,9 @@ func startRepl(config *commands.Config) {
 			continue	
 		}
 
-		err := command.Callback(config)
+		err := command.Callback(config, clean[1:])
 		if err != nil {
-			fmt.Printf("command error: %v\n", err)
+			fmt.Printf("%v\n", err)
 		}
 
 		prompt()

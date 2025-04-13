@@ -45,3 +45,5 @@ func (c *Client) ListLocations(url string) (ResourceList, error) {
 
 	return locationList, nil
 }
+
+

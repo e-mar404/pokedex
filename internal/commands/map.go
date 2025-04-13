@@ -2,7 +2,7 @@ package commands
 
 import "fmt"
 
-func mapf(c *Config) error {
+func mapf(c *Config, _ []string) error {
 	locationList, err := c.PokeClient.ListLocations(c.nextURL)
 	if err != nil {
 		return err
@@ -18,7 +18,7 @@ func mapf(c *Config) error {
 	return nil
 }
 
-func mapb(c *Config) error {
+func mapb(c *Config, _ []string) error {
 	locationList, err := c.PokeClient.ListLocations(c.prevURL)
 	if err != nil {
 		return err
