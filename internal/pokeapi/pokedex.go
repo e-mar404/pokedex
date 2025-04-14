@@ -1,21 +1,21 @@
 package pokeapi
 
 type Pokedex struct {
-	pokemon map[string]Pokemon
+	Pokemon map[string]Pokemon
 }
 
 func NewPokedex() *Pokedex {
 	return &Pokedex{
-		pokemon: map[string]Pokemon{},
+		Pokemon: map[string]Pokemon{},
 	}
 }
 
 func (p *Pokedex) Add(name string, pokemon Pokemon) {
-	p.pokemon[name] = pokemon
+	p.Pokemon[name] = pokemon
 }
 
 func (p *Pokedex) Get(name string) (Pokemon, bool) {
-	pokemon, ok := p.pokemon[name]
+	pokemon, ok := p.Pokemon[name]
 	if !ok {
 		return Pokemon{}, false
 	}

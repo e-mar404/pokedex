@@ -52,5 +52,10 @@ func List() map[string]cliCommand {
 			description: "Inspect previously caught pokemon",
 			Callback:    inspect,
 		},
+		"pokedex": {
+			name:        "pokedex",
+			description: "Show the pokemon currently in your pokedex",
+			Callback:    pokedex,
+		},
 	}
 }
